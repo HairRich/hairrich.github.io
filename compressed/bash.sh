@@ -1,14 +1,14 @@
 npm install -g @gltf-transform/cli
 
-gltf-transform uncompress facecap.glb facecap.gltf
+gltf-transform uncompress HairSilmulation.glb HairSilmulation.gltf
 
-gltf-transform inspect facecap.gltf
-
-
-gltf-pipeline -i facecap.glb -o facecap.gltf --json
+gltf-transform inspect HairSilmulation.gltf
 
 
-gltf-transform cp facecap.gltf facecap_output.gltf
+gltf-pipeline -i HairSilmulation.glb -o HairSilmulation.gltf --json
+
+
+gltf-transform cp HairSilmulation.gltf HairSilmulation_output.gltf
 
 
 ./basisu -ktx2 -decode my_texture.ktx2

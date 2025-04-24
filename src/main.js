@@ -346,8 +346,10 @@ class App {
 	async loadGLTF() {
 		let mesh = {}
 		const loader = new GLTFLoader(loadingManager)
-		loader.load("/model/Facial.gltf", (gltf) => {
+		loader.load("/HairSilmulation.glb", (gltf) => {
+
 			mesh = gltf.scene.children[0]
+			console.log("mesh", mesh)
 
 			mesh.position.set(0, -4, 0)
 			mesh.scale.set(20, 20, 20)
@@ -355,7 +357,7 @@ class App {
 			// console.log("mesh", this.mesh)
 
 			this.scene.add(mesh)
-			this.addMeshHelpers(mesh)
+			// this.addMeshHelpers(mesh)
 		})
 	}
 	async loadJSON() {
