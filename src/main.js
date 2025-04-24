@@ -186,7 +186,7 @@ class App {
 		// })
 
 		const exrLoader = new EXRLoader()
-		exrLoader.load("/forest.exr", function (texture) {
+		exrLoader.load("/interior.exr", function (texture) {
 			texture.mapping = EquirectangularReflectionMapping
 
 			// Set the environment map
