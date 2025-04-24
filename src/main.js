@@ -258,6 +258,7 @@ class App {
 		// this.scene.add(pointLight)
 		this.lights.main = new DirectionalLight("white", 8)
 		this.lights.main.position.set(10, 10, 10)
+		this.lights.main.intensity = 0.5
 		this.scene.add(this.lights.main)
 
 		this.lights.ambient = new AmbientLight("white", 2)
