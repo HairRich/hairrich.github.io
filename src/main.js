@@ -205,9 +205,10 @@ class App {
 		// this.camera.position.z = 100
 		// this.camera.position.y = 20
 
-		this.camera.position.z = 9
-		this.camera.position.y = 2
-		// this.camera.position.set(-1, 0.8, 5)
+		// this.camera.position.z = 9
+		// this.camera.position.y = 2
+		this.camera.position.set(0, 1, 60)
+		this.camera.rotation.set(90, 0, 0)
 	}
 
 	createRenderer() {
@@ -346,17 +347,21 @@ class App {
 	async loadGLTF() {
 		let mesh = {}
 		const loader = new GLTFLoader(loadingManager)
-		loader.load("/HairSilmulation.glb", (gltf) => {
-
-			mesh = gltf.scene.children[0]
+		loader.load("/HairSilmulation.gltf", (gltf) => {
+			console.log("gltf", gltf)
+			mesh = gltf.scene
 			console.log("mesh", mesh)
+			console.log("geometry", mesh)
+			// mesh.scale.set(100, 100, 100)s
+			// mesh.position.set(0, 0, 0)
 
-			mesh.position.set(0, -4, 0)
-			mesh.scale.set(20, 20, 20)
+			// mesh.position.set(0, -4, 0)
+			// mesh.scale.set(20, 20, 20)
 
 			// console.log("mesh", this.mesh)
 
-			this.scene.add(mesh)
+			this.scene.add(gltf.scene)
+			// this.scene.add(gltf.scene.children[0])
 			// this.addMeshHelpers(mesh)
 		})
 	}

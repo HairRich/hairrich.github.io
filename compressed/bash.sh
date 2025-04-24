@@ -18,3 +18,6 @@ ktx-uninstall
 toktx
 
 ktx extract image baseColor.ktx2 baseColorOutput.png
+
+
+npx gltf-transform copy HairSilmulation.glb HairSilmulation.gltf
